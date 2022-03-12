@@ -90,7 +90,7 @@
                     <div class="clear"></div>
                     <tr>
                         <td>
-                            <p style="color:#E5B840;  position:absolute; left:490px; top:150px;">Price(1 unit)</p>
+                            <p style="color:#E5B840;  position:absolute; left:490px; top:150px;">Mileage</p>
                         </td>
                     </tr>
                     <div class="clear"></div>

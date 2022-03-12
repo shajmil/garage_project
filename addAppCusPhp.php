@@ -17,7 +17,7 @@ class Appoinment
 	private $emp_count;
 	private $y;
 	private $t;
-	private $z=700;
+	private $z=740;
 	
 	public function create($date,$plate)
 	{
@@ -27,9 +27,10 @@ class Appoinment
 		
 		$_SESSION['plate']=$plate;
 		
-		$this->date=date("Y-m-d");
+		$this->date=date("d-m-y");
 		
 		$query="SELECT * FROM customer WHERE plateNo='$plate' AND email='$this->email'";
+		echo $query;
 		$this->result=mysqli_query($this->conn,$query);
 		$this->count=mysqli_num_rows($this->result);
 		
@@ -46,8 +47,8 @@ class Appoinment
 			else
 			{
 				$_SESSION['date']=$date;
-				echo "<p style='color:white;  position:absolute; top:600px; left:1020px; font-size:20px; font-family:arvo; color:white; font-weight:bold;'>$plate</p>";
-				echo "<p style='color:white;  position:absolute; top:650px; left:1020px; font-size:20px; font-family:arvo; color:white; font-weight:bold;'>$date</p>";
+				echo "<p style='color:white;  position:absolute; top:615px; left:1100px; font-size:20px; font-family:arvo; color:white; font-weight:bold;'>$plate</p>";
+				echo "<p style='color:white;  position:absolute; top:660px; left:1100px; font-size:20px; font-family:arvo; color:white; font-weight:bold;'>$date</p>";
 				
 				$this->x=8;
 				while($this->x<=17)
@@ -67,7 +68,7 @@ class Appoinment
 					if($this->countSlots<$this->emp_count)
 					{
 						$this->y=$this->x+1;
-						echo"<p style='position:absolute; left:1020px; top:{$this->z}px; z-index:99999; font-size:20px; font-family:arvo; color:#E5B840; font-weight:bold; ' ><a href=addAppCus2.php?$this->x>$this->x:00:00 - $this->y:00:00</a></p>";
+						echo"<p style='position:absolute; left:1100px; top:{$this->z}px; z-index:99999; font-size:20px; font-family:arvo; color:#E5B840; font-weight:bold; ' ><a href=addAppCus2.php?$this->x>$this->x:00:00 - $this->y:00:00</a></p>";
 		
 						$this->z=$this->z+50;
 					}
